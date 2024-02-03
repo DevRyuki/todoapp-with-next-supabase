@@ -24,3 +24,5 @@
     "encoding": "^0.1.13"
   }
 }
+
+npm run dev

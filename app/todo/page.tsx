@@ -11,7 +11,7 @@ export default async function Page() {
   // data : any[] | null
     if (!data) return (<div>データがありません。</div>)
 
-  async function action(formData: FormData) {
+  async function actionHandler(formData: FormData) {
     'use server'
     const cookieStore = cookies();
     const supabase = createClient(cookieStore)
@@ -29,7 +29,7 @@ export default async function Page() {
 
     return (
       <div>
-          <form action={action}>
+          <form action={actionHandler}>
             <input className={"border"} type="text" name="name" id="name" />
             <button className={"border"} type="submit">Submit</button>
           </form>
@@ -41,6 +41,5 @@ export default async function Page() {
               </div>
           ))}
       </div>
-
     )
 }

@@ -28,19 +28,26 @@ export default async function Page() {
   }
 
     return (
-      <div>
-          <form action={action}>
-            <input className={"border"} type="text" name="name" id="name" />
-            <button className={"border"} type="submit">Submit</button>
-          </form>
+      <main className={""}>
+        <div className={"container"}>
+          <div className={"max-w-5xl w-96 px-4 py-2 border rounded-md space-y-2"}>
+            <h2>タスクを追加</h2>
+            <form action={action} className={"flex flex-col gap-2"}>
+              <input className={"border"} type="text" name="name" id="name"/>
+              <textarea name={"detail"} className={"border"}/>
+              <button className={"border"} type="submit">追加</button>
+            </form>
+          </div>
 
           {
-              data.map((todo) => (
+            data.map((todo) => (
               <div key={todo.id}>
-                  <p>{todo.name}</p>
+                <p>{todo.name}</p>
+                <></>
               </div>
-          ))}
-      </div>
+            ))}
+        </div>
+      </main>
 
     )
 }
